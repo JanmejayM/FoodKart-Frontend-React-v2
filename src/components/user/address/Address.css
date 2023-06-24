@@ -1,0 +1,10 @@
+.add.btn.btn-lg{
+ background-color: #fc8019;   
+ color: white;
+}
+
+.address.card.mb-3{
+  
+    min-width: 200px;
+    max-width: 600px;
+}

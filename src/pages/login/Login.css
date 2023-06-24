@@ -1,0 +1,35 @@
+
+ .container-fluid{
+ background-image: url('../../resources/unsplash.jpg');
+   position:absolute;
+    opacity: 0.9;
+height:100%;
+ width: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding-top: 150px;
+    filter: blur(8px);
+    z-index: -99;
+
+
+}
+
+form{
+    width: auto;
+    /* max-width: 400px; */
+
+    margin-top: 20vh;
+    margin-left: auto;
+margin-right:auto;
+background-color: aliceblue;
+border-style: solid;
+border-width: 0.5px;
+border-radius: 10px;
+padding: 20px;
+color: rgb(12, 11, 11);
+height: 60vw;
+z-index: 1;
+}
+
+ 
