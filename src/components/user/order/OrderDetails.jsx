@@ -54,7 +54,7 @@ const OrderDetails=(props)=>{
                     <h4>Total Price : Rs.{itemPrice}</h4>
 
                     </div>
-                    <button onClick={()=>{console.log(OrderService.getBill(orderid))}}>Need the Bill</button>
+                    <button onClick={()=>{console.log(OrderService.getBill(orderid))}} className="btn btn-primary">Need the Bill</button>
 
                     </div>
                     
