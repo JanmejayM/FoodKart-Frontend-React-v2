@@ -1,8 +1,9 @@
 import React, { useEffect, useId, useState } from "react";
+import OrderService from "../../../service/OrderService";
 
 const OrderDetails=(props)=>{
 
-   
+   const[orderid,setOrderid]=useState()
     const[item,setItem]=useState([])
     const[itemPrice,setItemPrice]=useState()
 
@@ -11,6 +12,7 @@ const OrderDetails=(props)=>{
     const getitem=()=>{
         setItem(props.message)
         setItemPrice(props.price)
+        setOrderid(props.orderid)
 
     }
 
@@ -52,10 +54,13 @@ const OrderDetails=(props)=>{
                     <h4>Total Price : Rs.{itemPrice}</h4>
 
                     </div>
+                    <button onClick={()=>{console.log(OrderService.getBill(orderid))}}>Need the Bill</button>
 
                     </div>
+                    
             
             )}
+
           </div>
     );
 }

@@ -9,7 +9,7 @@ const Order=()=>{
     const[orders,setOrders]=useState([])
     const[selectitem,setSelectItem]=useState([])
     const[selectprice,setSelectPrice]=useState()
-
+    const[orderid,setOrderid]=useState()
 
     const getOrdersofUser=()=>{
       OrderService.getByUserId(JSON.parse(sessionStorage.getItem("log")).id).then(
@@ -42,6 +42,7 @@ const Order=()=>{
     const selectOrder=(order)=>{
      setSelectItem(order.description)
      setSelectPrice(order.price)
+     setOrderid(order.id)
     }
 
     return(
@@ -94,7 +95,7 @@ const Order=()=>{
 
    
 
-   <OrderDetails message={selectitem} price={selectprice} />
+   <OrderDetails message={selectitem} price={selectprice} orderid={orderid}/>
 
     </div>
 

@@ -36,7 +36,11 @@ class OrderService
       return axios.get(baseUrl+`/getRevenueMonthly?fromdate=${date1}&todate=${date2}`)
   
     }
- 
+    getBill(orderid)
+    {
+      return axios.get(baseUrl+`/getBill?orderid=${orderid}`)
+  
+    }
 }
 
 
