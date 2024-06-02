@@ -6,8 +6,23 @@ const OrderDetails=(props)=>{
    const[orderid,setOrderid]=useState()
     const[item,setItem]=useState([])
     const[itemPrice,setItemPrice]=useState()
+    const[message,setMessage]=useState()
+    const[disabled,setDisabled]=useState(false)
 
-    
+
+    const getBill=()=>{
+        OrderService.getBill(orderid).then(
+            res=>{
+                if(res.status=='200')
+                {
+                    setMessage("Bill Generated")
+                    setDisabled(true)
+                }
+            }
+
+            
+        )
+    }
 
     const getitem=()=>{
         setItem(props.message)
@@ -18,6 +33,8 @@ const OrderDetails=(props)=>{
 
     useEffect(() => {
         getitem()
+        setMessage("")
+        setDisabled(false)
       },[props])
    
 
@@ -54,8 +71,8 @@ const OrderDetails=(props)=>{
                     <h4>Total Price : Rs.{itemPrice}</h4>
 
                     </div>
-                    <button onClick={()=>{console.log(OrderService.getBill(orderid))}} className="btn btn-primary">Need the Bill</button>
-
+                    <button onClick={()=>{getBill(orderid)}} className="btn btn-primary" disabled={disabled}>Need the Bill</button>
+                    <p>{message}</p>
                     </div>
                     
             
